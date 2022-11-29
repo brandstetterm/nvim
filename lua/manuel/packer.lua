@@ -7,10 +7,7 @@ return require('packer').startup(function()
   use('tpope/vim-fugitive')
   use('nvim-lua/plenary.nvim')
   use('nvim-telescope/telescope.nvim')
-  use({'neovim/nvim-lspconfig', requires = {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim'
-  }})
+  use('neovim/nvim-lspconfig')
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
