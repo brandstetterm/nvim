@@ -38,7 +38,14 @@ require('lspconfig').svelte.setup({
 
 require('lspconfig').sumneko_lua.setup({
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
 })
 
 require('lspconfig').gopls.setup({

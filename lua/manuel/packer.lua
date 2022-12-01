@@ -1,7 +1,10 @@
 return require('packer').startup(function()
   use('wbthomason/packer.nvim')
   use({'catppuccin/nvim', as = 'catppuccin'})
-  use({'feline-nvim/feline.nvim', branch = '0.5-compat'})
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use({'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}})
   use('tpope/vim-fugitive')
