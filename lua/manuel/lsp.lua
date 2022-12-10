@@ -18,9 +18,13 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-j>'] = cmp.mapping.select_next_item(),
   ['<C-Space>'] = cmp.mapping.complete(),
 })
+local cmp_sources = lsp.defaults.cmp_sources({
+  --{ name = "copilot" },
+})
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+  mapping = cmp_mappings,
+  sources = cmp_sources,
 })
 
 lsp.on_attach(function(client, bufnr) 
