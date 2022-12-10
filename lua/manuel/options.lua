@@ -27,3 +27,4 @@ vim.opt.splitbelow = true
 vim.opt.completeopt = 'menu,menuone,noselect'
 
 vim.cmd.colorscheme 'catppuccin-macchiato'
+vim.opt.cursorline = true
