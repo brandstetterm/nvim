@@ -3,6 +3,9 @@ return require('packer').startup(function()
   use('nvim-lua/plenary.nvim')
   use('nvim-telescope/telescope.nvim')
 
+  -- GitHub Copilot
+  use('github/copilot.vim')
+
   -- Colorscheme
   use({'catppuccin/nvim', as = 'catppuccin'})
 
