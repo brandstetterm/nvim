@@ -5,5 +5,6 @@ require('manuel.nvim-tree')
 require('manuel.telescope')
 require('manuel.treesitter')
 require('manuel.lualine')
+require('manuel.remap')
 
 
