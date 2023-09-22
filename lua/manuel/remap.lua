@@ -9,3 +9,4 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>gs", function() vim.cmd.Git() end)
 vim.keymap.set("n", "<leader>p", function() vim.cmd.Git("push") end)
 vim.keymap.set("n", "<leader>P", function() vim.cmd.Git("pull") end)
+

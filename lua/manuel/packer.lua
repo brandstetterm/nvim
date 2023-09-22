@@ -1,63 +1,71 @@
-return require('packer').startup(function()
-  use('wbthomason/packer.nvim')
-  use('nvim-lua/plenary.nvim')
-  use('nvim-telescope/telescope.nvim')
+return require('packer').startup(function(use)
+    use('wbthomason/packer.nvim')
+    use('nvim-lua/plenary.nvim')
+    use('nvim-telescope/telescope.nvim')
+    use('wuelnerdotexe/vim-astro')
+    use('christoomey/vim-tmux-navigator')
+    use('ggandor/leap.nvim')
 
-  -- GitHub Copilot
-  use({
-    "zbirenbaum/copilot.lua",
-    event = "VimEnter",
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup({
-          suggestion = {
-            auto_trigger = true
-          }
-        })
-      end, 100)
-    end,
-  })
-  --use {
-    --"zbirenbaum/copilot-cmp",
-    --after = { "copilot.lua" },
-    --config = function ()
-      --require("copilot_cmp").setup()
-    --end
-  --}
+    -- File Explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
 
-  -- Colorscheme
-  use({'catppuccin/nvim', as = 'catppuccin'})
+    -- GitHub Copilot
+    use {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                panel = {
+                    enabled = false,
+                },
+                suggestion = {
+                    enabled = true,
+                    auto_trigger = true,
+                    keymap = {
+                        accept = "<M-CR>",
+                    },
+                },
+            })
+        end,
+    }
 
-  -- Syntax Highlighting 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- Colorscheme
+    use({'catppuccin/nvim', as = 'catppuccin'})
+    use({'folke/tokyonight.nvim'})
 
-  -- Statusline
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+    -- Syntax Highlighting 
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-  -- File tree
-  use({'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}})
+    -- Statusline
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
-  -- Git
-  use('tpope/vim-fugitive')
+    -- Git
+    use('tpope/vim-fugitive')
 
-  -- LSP
-  use("VonHeikemen/lsp-zero.nvim")
-  use('neovim/nvim-lspconfig')
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
-
-  -- Autocomplete
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use('saadparwaiz1/cmp_luasnip')
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-nvim-lua")
-
-  -- Snippets
-  use('L3MON4D3/LuaSnip')
-  use("rafamadriz/friendly-snippets")
+    -- LSP
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            --- Manage LSP servers from neovim
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-path'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
+        }
+    }
 end)

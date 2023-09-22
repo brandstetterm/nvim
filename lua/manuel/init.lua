@@ -6,5 +6,4 @@ require('manuel.telescope')
 require('manuel.treesitter')
 require('manuel.lualine')
 require('manuel.remap')
-
-
+require('manuel.leap')

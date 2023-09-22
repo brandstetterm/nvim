@@ -4,9 +4,9 @@ vim.opt.swapfile = false
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.compatible = false
@@ -24,7 +24,11 @@ vim.bo.undofile = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.completeopt = 'menu,menuone,noselect'
+--vim.cmd.colorscheme 'catppuccin-macchiato'
+--vim.cmd.colorscheme 'catppuccin-latte'
 
-vim.cmd.colorscheme 'catppuccin-macchiato'
+vim.cmd[[colorscheme tokyonight-moon]]
 vim.opt.cursorline = true
+
+vim.g.astro_typescript = 'enable'
+vim.g.astro_styles = 'enable'

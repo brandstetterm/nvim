@@ -15,6 +15,17 @@ require('telescope').setup{
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
+  },
+  pickers = {
+      find_files = {
+          theme = 'dropdown'
+      },
+      live_grep = {
+          theme = 'dropdown'
+      },
+      oldfiles = {
+          theme = 'dropdown'
+      },
   }
 }
 
