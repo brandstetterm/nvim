@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
     use('christoomey/vim-tmux-navigator')
     use('ggandor/leap.nvim')
 
-    -- File Explorer
+    -- File Tree
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
-            --- Manage LSP servers from neovim
+            --- Manage LSP servers with Mason
             {'williamboman/mason.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
             -- LSP Support
