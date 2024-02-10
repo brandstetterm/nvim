@@ -1,39 +1,20 @@
 return require('packer').startup(function(use)
+    --use('stevearc/dressing.nvim')
     use('wbthomason/packer.nvim')
     use('nvim-lua/plenary.nvim')
     use('nvim-telescope/telescope.nvim')
     use('wuelnerdotexe/vim-astro')
     use('christoomey/vim-tmux-navigator')
     use('ggandor/leap.nvim')
+    use('nvim-pack/nvim-spectre')
 
-    -- File Tree
     use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
+      'stevearc/oil.nvim',
+      opts = {},
+      -- Optional dependencies
+      dependencies = { "nvim-tree/nvim-web-devicons" },
     }
 
-    -- GitHub Copilot
-    use {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                panel = {
-                    enabled = false,
-                },
-                suggestion = {
-                    enabled = true,
-                    auto_trigger = true,
-                    keymap = {
-                        accept = "<M-CR>",
-                    },
-                },
-            })
-        end,
-    }
 
     -- Colorscheme
     use({'catppuccin/nvim', as = 'catppuccin'})
