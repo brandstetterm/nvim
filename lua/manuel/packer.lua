@@ -1,5 +1,5 @@
 return require('packer').startup(function(use)
-    --use('stevearc/dressing.nvim')
+    use('stevearc/dressing.nvim')
     use('wbthomason/packer.nvim')
     use('nvim-lua/plenary.nvim')
     use('nvim-telescope/telescope.nvim')
@@ -10,9 +10,11 @@ return require('packer').startup(function(use)
 
     use {
       'stevearc/oil.nvim',
-      opts = {},
-      -- Optional dependencies
-      dependencies = { "nvim-tree/nvim-web-devicons" },
+      config = function() require('oil').setup() end
+    }
+    use {
+      'nvim-tree/nvim-web-devicons',
+      config = function() require('nvim-web-devicons').setup() end
     }
 
 

@@ -11,5 +11,4 @@ require('manuel.lualine')
 require('manuel.remap')
 require('manuel.spectre')
 require('manuel.leap')
-require('oil').setup()
 
