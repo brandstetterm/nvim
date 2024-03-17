@@ -53,4 +53,13 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
         }
     }
+
+    -- Obsidian: Write and navigate Vaults in Neovim
+    use({
+      'epwalsh/obsidian.nvim',
+      tag = '*',
+      requires = {
+        'nvim-lua/plenary.nvim',
+      },
+    })
 end)
