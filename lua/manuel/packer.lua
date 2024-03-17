@@ -17,10 +17,9 @@ return require('packer').startup(function(use)
       config = function() require('nvim-web-devicons').setup() end
     }
 
-
     -- Colorscheme
     use({'catppuccin/nvim', as = 'catppuccin'})
-    use({'folke/tokyonight.nvim'})
+    --use({'folke/tokyonight.nvim'})
 
     -- Syntax Highlighting 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})

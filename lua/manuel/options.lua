@@ -26,8 +26,10 @@ vim.opt.splitbelow = true
 
 --vim.cmd.colorscheme 'catppuccin-macchiato'
 --vim.cmd.colorscheme 'catppuccin-latte'
+vim.cmd[[colorscheme catppuccin]]
+vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' })
 
-vim.cmd[[colorscheme tokyonight-moon]]
+--vim.cmd[[colorscheme tokyonight-moon]]
 vim.opt.cursorline = true
 
 vim.g.astro_typescript = 'enable'
