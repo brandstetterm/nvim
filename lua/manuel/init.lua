@@ -13,5 +13,4 @@ require('manuel.catppuccin')
 require('manuel.leap')
 require('manuel.options')
 require('manuel.neogit')
-require('manuel.obsidian')
 
